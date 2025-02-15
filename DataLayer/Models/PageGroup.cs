@@ -14,31 +14,31 @@ namespace DataLayer
         [Key]
         public int CommentID { get; set; }
 
-        [Display(Name = "خبر")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [Display(Name = "News")]
+        [Required(ErrorMessage = "Please enter {0}")]
         public int PageID { get; set; }
 
-        [Display(Name = "نام")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [Display(Name = "Name")]
+        [Required(ErrorMessage = "Please enter {0}")]
         [MaxLength(150)]
         public string Name { get; set; }
-        [Display(Name = "ایمیل")]
+        [Display(Name = "Email")]
         [MaxLength(200)]
         public string Email { get; set; }
-        [Display(Name = "سایت")]
+        [Display(Name = "Website")]
         [MaxLength(200)]
         public string WebSite { get; set; }
 
-        [Display(Name = "نظر")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [Display(Name = "Comments")]
+        [Required(ErrorMessage = "Please enter {0}")]
         [MaxLength(500)]
         public string Comment { get; set; }
 
-        [Display(Name = "تاریخ ثبت")]
+        [Display(Name = "Creation Date")]
         public DateTime CreateDate { get; set; }
 
         // Nvigation Property
-        public virtual Page Page { get; set; }
+        public virtual List<Page> Page { get; set; }
 
         public PageGroup()
         {

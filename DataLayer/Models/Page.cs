@@ -18,7 +18,7 @@ namespace DataLayer
         public int GroupID { get; set; }
 
         [Display(Name = "Title")]
-        [Required(ErrorMessage = "Please enter {0}.")]
+        [Required(ErrorMessage = "Please enter {0}")]
         [MaxLength(250)]
         public string Title { get; set; }
 
