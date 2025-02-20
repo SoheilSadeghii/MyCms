@@ -46,7 +46,7 @@ namespace DataLayer
         // Navigation Property
         public virtual PageGroup PageGroup { get; set; }
 
-        public virtual List<PageComment> PageComment { get; set; }
+        public virtual List<PageComment> PageComments { get; set; }
 
         public Page()
         {

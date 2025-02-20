@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -43,9 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\MyCmsContext.cs" />
-    <Compile Include="Migrations\202502151653339_Initial_Database.cs" />
-    <Compile Include="Migrations\202502151653339_Initial_Database.Designer.cs">
-      <DependentUpon>202502151653339_Initial_Database.cs</DependentUpon>
+    <Compile Include="Migrations\202502200546560_Initial_Database.cs" />
+    <Compile Include="Migrations\202502200546560_Initial_Database.designer.cs">
+      <DependentUpon>202502200546560_Initial_Database.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Page.cs" />
@@ -64,8 +64,8 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202502151653339_Initial_Database.resx">
-      <DependentUpon>202502151653339_Initial_Database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202502200546560_Initial_Database.resx">
+      <DependentUpon>202502200546560_Initial_Database.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

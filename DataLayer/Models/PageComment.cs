@@ -10,15 +10,33 @@ namespace DataLayer
     public class PageComment
     {
         [Key]
-        public int GroupID { get; set; }
+        public int CommentID { get; set; }
 
-        [Display(Name = "Group Title")]
+        [Display(Name = "News")]
+        [Required(ErrorMessage = "Please enter {0}")]
+        public int PageID { get; set; }
+
+        [Display(Name = "Name")]
         [Required(ErrorMessage = "Please enter {0}")]
         [MaxLength(150)]
-        public string GroupTitle { get; set; }
+        public string Name { get; set; }
+        [Display(Name = "Email")]
+        [MaxLength(200)]
+        public string Email { get; set; }
+        [Display(Name = "Website")]
+        [MaxLength(200)]
+        public string WebSite { get; set; }
+
+        [Display(Name = "Comments")]
+        [Required(ErrorMessage = "Please enter {0}")]
+        [MaxLength(500)]
+        public string Comment { get; set; }
+
+        [Display(Name = "Creation Date")]
+        public DateTime CreateDate { get; set; }
 
         // Navigation Property
-        public virtual List<Page> Pages { get; set; }
+        public virtual Page Page { get; set; }
 
         public PageComment()
         {
