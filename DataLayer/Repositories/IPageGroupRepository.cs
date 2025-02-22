@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-    public interface IPageGroupRepository
+    public interface IPageGroupRepository : IDisposable
     {
         IEnumerable<PageGroup> GetAllGroups();
         PageGroup GetGroupById(int groupId);
