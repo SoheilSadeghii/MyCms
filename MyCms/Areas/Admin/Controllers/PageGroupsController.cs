@@ -43,7 +43,7 @@ namespace MyCms.Areas.Admin.Controllers
         // GET: Admin/PageGroups/Create
         public ActionResult Create()
         {
-            return View();
+            return PartialView();
         }
 
         // POST: Admin/PageGroups/Create

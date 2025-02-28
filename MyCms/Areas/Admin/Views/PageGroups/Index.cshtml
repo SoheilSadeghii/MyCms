@@ -49,12 +49,18 @@
 </div>
 <!-- End Modal -->
 
-<script>
-    $("#btnNewGroup").click(function () {
-        $.get("/Admin/PageGroups/Create", function (result) {
+@section scripts
+{
 
-        $("#myModal").modal();
-        $("myModalLabel").html("Create New Group");
-        $("#myModalBody").html(result);
-    });
-</script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $("#btnNewGroup").click(function () {
+            $.get("/Admin/PageGroups/Create", function (result) {
+
+                $("#myModal").modal();
+                $("#myModalLabel").html("Create New Group");
+                $("#myModalBody").html(result);
+            });
+        });
+    </script>
+}
