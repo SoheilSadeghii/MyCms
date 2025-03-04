@@ -52,6 +52,8 @@ namespace MyCms.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                page.Visit = 0;
+                page.CreateDate = DateTime.Now;
                 db.Pages.Add(page);
                 db.SaveChanges();
                 return RedirectToAction("Index");

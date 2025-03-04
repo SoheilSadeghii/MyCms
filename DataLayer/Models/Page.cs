@@ -25,10 +25,12 @@ namespace DataLayer
         [Display(Name = "Short Description")]
         [Required(ErrorMessage = "Please enter {0}")]
         [MaxLength(350)]
+        [DataType(DataType.MultilineText)]
         public string ShortDescription { get; set; }
 
         [Display(Name = "Text")]
         [Required(ErrorMessage = "Please enter {0}")]
+        [DataType(DataType.MultilineText)]
         public string Text { get; set; }
 
         [Display(Name = "Views")]
