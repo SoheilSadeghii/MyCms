@@ -9,7 +9,12 @@ namespace DataLayer
 {
     public class PageGroupRepository : IPageGroupRepository
     {
-        MyCmsContext db = new MyCmsContext();
+        private MyCmsContext db;
+
+        public PageGroupRepository(MyCmsContext context)
+        {
+            db = context;
+        }
         public IEnumerable<PageGroup> GetAllGroups()
         {
             return db.PageGroups;

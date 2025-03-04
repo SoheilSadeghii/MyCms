@@ -13,10 +13,11 @@ namespace MyCms.Areas.Admin.Controllers
     public class PageGroupsController : Controller
     {
         IPageGroupRepository pageGroupRepository;
+        MyCmsContext db = new MyCmsContext();
 
         public PageGroupsController()
         {
-            pageGroupRepository = new PageGroupRepository();
+            pageGroupRepository = new PageGroupRepository(db);
         }
 
         // GET: Admin/PageGroups
@@ -120,6 +121,7 @@ namespace MyCms.Areas.Admin.Controllers
             if (disposing)
             {
                 pageGroupRepository.Dispose();
+                db.Dispose();
             }
             base.Dispose(disposing);
         }
