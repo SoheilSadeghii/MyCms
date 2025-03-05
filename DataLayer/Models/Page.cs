@@ -43,6 +43,7 @@ namespace DataLayer
         public bool ShowInSlider { get; set; }
 
         [Display(Name = "Creation Date")]
+        [DisplayFormat(DataFormatString ="{0: yyyy/MM/dd}")]
         public DateTime CreateDate { get; set; }
 
         // Navigation Property
