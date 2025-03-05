@@ -35,7 +35,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.ImageName)
+            <img src="~/PageImages/@item.ImageName" class="img-thumbnail" style="max-width:120px"/>
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PageGroup.GroupTitle)
