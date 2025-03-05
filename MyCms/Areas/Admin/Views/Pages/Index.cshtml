@@ -12,22 +12,16 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.ImageName)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.PageGroup.GroupTitle)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Title)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ShortDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Text)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Visit)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImageName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ShowInSlider)
@@ -41,22 +35,16 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.ImageName)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.PageGroup.GroupTitle)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Title)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ShortDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Text)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Visit)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ImageName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ShowInSlider)
@@ -65,9 +53,9 @@
             @Html.DisplayFor(modelItem => item.CreateDate)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PageID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PageID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PageID })
+            @Html.ActionLink("Edit", "Edit", new { id = item.PageID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.PageID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.PageID })
         </td>
     </tr>
 }
