@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -12,13 +13,20 @@ namespace MyCms.Areas.Admin.Controllers
 {
     public class PagesController : Controller
     {
+        private IPageRepository _pageRepository;
+        private IPageGroupRepository _pageGroupRepository;
         private MyCmsContext db = new MyCmsContext();
+
+        public PagesController()
+        {
+            _pageRepository = new PageRepository(db);
+            _pageGroupRepository = new PageGroupRepository(db);
+        }
 
         // GET: Admin/Pages
         public ActionResult Index()
         {
-            var pages = db.Pages.Include(p => p.PageGroup);
-            return View(pages.ToList());
+            return View(_pageRepository.GetAllPages());
         }
 
         // GET: Admin/Pages/Details/5
@@ -39,7 +47,7 @@ namespace MyCms.Areas.Admin.Controllers
         // GET: Admin/Pages/Create
         public ActionResult Create()
         {
-            ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle");
+            ViewBag.GroupID = new SelectList(_pageGroupRepository.GetAllGroups(), "GroupID", "GroupTitle");
             return View();
         }
 
@@ -54,8 +62,15 @@ namespace MyCms.Areas.Admin.Controllers
             {
                 page.Visit = 0;
                 page.CreateDate = DateTime.Now;
-                db.Pages.Add(page);
-                db.SaveChanges();
+                _pageRepository.InsertPage(page);
+
+                if (imgUp != null)
+                {
+                    page.ImageName = Guid.NewGuid() + Path.GetExtension(imgUp.FileName);
+                    imgUp.SaveAs(Server.MapPath("/PageImages/" + page.ImageName));
+                }
+
+                _pageRepository.Save();
                 return RedirectToAction("Index");
             }
 
@@ -126,7 +141,8 @@ namespace MyCms.Areas.Admin.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                //db.Dispose();
+
             }
             base.Dispose(disposing);
         }
