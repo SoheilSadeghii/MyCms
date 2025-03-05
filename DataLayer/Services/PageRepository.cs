@@ -83,5 +83,10 @@ namespace DataLayer
         {
             db.SaveChanges();
         }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
