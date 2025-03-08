@@ -6,18 +6,20 @@
 
 <h2>Edit</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "Pages", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Page</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.PageID)
-
+        @Html.HiddenFor(model => model.Visit)
+        @Html.HiddenFor(model => model.CreateDate)
+        @Html.HiddenFor(model => model.ImageName)
         <div class="form-group">
-            @Html.LabelFor(model => model.GroupID, "GroupID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.GroupID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("GroupID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.GroupID, "", new { @class = "text-danger" })
@@ -49,18 +51,15 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Visit, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Visit, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Visit, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.ImageName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ImageName, new { htmlAttributes = new { @class = "form-control" } })
+                <input type="file" name="imgUp" />
                 @Html.ValidationMessageFor(model => model.ImageName, "", new { @class = "text-danger" })
+
+                @if (Model.ImageName != null)
+                {
+                    <img src="/PageImages/@Model.ImageName" class="img-thumbnail" style="max-width:150px" />
+                }
             </div>
         </div>
 
@@ -71,14 +70,6 @@
                     @Html.EditorFor(model => model.ShowInSlider)
                     @Html.ValidationMessageFor(model => model.ShowInSlider, "", new { @class = "text-danger" })
                 </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CreateDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CreateDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CreateDate, "", new { @class = "text-danger" })
             </div>
         </div>
 

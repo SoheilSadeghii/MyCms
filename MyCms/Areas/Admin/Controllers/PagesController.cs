@@ -70,6 +70,7 @@ namespace MyCms.Areas.Admin.Controllers
                     imgUp.SaveAs(Server.MapPath("/PageImages/" + page.ImageName));
                 }
 
+                _pageRepository.InsertPage(page);
                 _pageRepository.Save();
                 return RedirectToAction("Index");
             }
@@ -85,7 +86,7 @@ namespace MyCms.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Page page = db.Pages.Find(id);
+            Page page = _pageRepository.GetPageById(id.Value);
             if (page == null)
             {
                 return HttpNotFound();
@@ -99,12 +100,22 @@ namespace MyCms.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PageID,GroupID,Title,ShortDescription,Text,Visit,ImageName,ShowInSlider,CreateDate")] Page page)
+        public ActionResult Edit([Bind(Include = "PageID,GroupID,Title,ShortDescription,Text,Visit,ImageName,ShowInSlider,CreateDate")] Page page, HttpPostedFileBase imgUp)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(page).State = EntityState.Modified;
-                db.SaveChanges();
+                if (imgUp != null)
+                {
+                    if (page.ImageName != null)
+                    {
+                        System.IO.File.Delete(Server.MapPath("/PageImages/" + page.ImageName));
+                    }
+                        page.ImageName = Guid.NewGuid() + Path.GetExtension(imgUp.FileName);
+                        imgUp.SaveAs(Server.MapPath("/PageImages/" + page.ImageName));                    
+                }
+
+                _pageRepository.UpdatePage(page);
+                _pageRepository.Save();
                 return RedirectToAction("Index");
             }
             ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle", page.GroupID);
@@ -141,7 +152,9 @@ namespace MyCms.Areas.Admin.Controllers
         {
             if (disposing)
             {
-                //db.Dispose();
+                _pageRepository.Dispose();
+                _pageGroupRepository.Dispose();
+                db.Dispose();
 
             }
             base.Dispose(disposing);
