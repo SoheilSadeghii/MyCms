@@ -308,10 +308,11 @@
     <div class="tab-news">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                @Html.Action("ShowGroup", "News")
+                <div class="col-md-4">
                     <ul class="nav nav-pills nav-justified">
                         <li class="nav-item">
-                            <a class="nav-link active" data-toggle="pill" href="#featured">Featured News</a>
+                            <a class="nav-link active" data-toggle="pill" href="#featured">Featured New</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="pill" href="#popular">Popular News</a>
@@ -403,7 +404,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <ul class="nav nav-pills nav-justified">
                         <li class="nav-item">
                             <a class="nav-link active" data-toggle="pill" href="#m-viewed">Most Viewed</a>
@@ -498,6 +499,8 @@
                     </div>
                 </div>
             </div>
+            <br />
+            <br />
         </div>
     </div>
     <!-- Tab News Start-->
