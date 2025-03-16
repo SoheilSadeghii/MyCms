@@ -15,5 +15,7 @@ namespace DataLayer
         bool DeletePage(Page page);
         bool DeletePage(int pageId);
         void Save();
+
+        IEnumerable<Page> TopNews(int take = 3);
     }
 }

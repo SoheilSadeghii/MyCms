@@ -11,10 +11,12 @@ namespace MyCms.Controllers
     {
         MyCmsContext db = new MyCmsContext();
         private IPageGroupRepository pageGroupRepository;
+        private IPageRepository pageRepository;
 
         public NewsController()
         {
             pageGroupRepository = new PageGroupRepository(db);
+            pageRepository = new PageRepository(db);
         }
 
         // GET: News
@@ -23,9 +25,14 @@ namespace MyCms.Controllers
             return PartialView(pageGroupRepository.GetGroupsForView());
         }
 
-        public ActionResult ShowGroupInMenu() 
+        public ActionResult ShowGroupInMenu()
         {
             return PartialView(pageGroupRepository.GetAllGroups());
+        }
+
+        public ActionResult TopNews()
+        {
+            return PartialView(pageRepository.TopNews());
         }
     }
 }
