@@ -17,5 +17,6 @@ namespace DataLayer
         void Save();
 
         IEnumerable<Page> TopNews(int take = 3);
+        IEnumerable<Page> PagesInSlider();
     }
 }

@@ -234,6 +234,7 @@
     <Content Include="Views\News\ShowGroup.cshtml" />
     <Content Include="Views\News\ShowGroupInMenu.cshtml" />
     <Content Include="Views\News\TopNews.cshtml" />
+    <Content Include="Views\Home\Slider.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
