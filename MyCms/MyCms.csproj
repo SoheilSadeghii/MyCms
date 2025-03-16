@@ -232,6 +232,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_DefaultLayout.cshtml" />
     <Content Include="Views\News\ShowGroup.cshtml" />
+    <Content Include="Views\News\ShowGroupInMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

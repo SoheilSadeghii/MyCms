@@ -22,5 +22,10 @@ namespace MyCms.Controllers
         {
             return PartialView(pageGroupRepository.GetGroupsForView());
         }
+
+        public ActionResult ShowGroupInMenu() 
+        {
+            return PartialView(pageGroupRepository.GetAllGroups());
+        }
     }
 }

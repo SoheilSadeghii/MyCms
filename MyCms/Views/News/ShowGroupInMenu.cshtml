@@ -1,0 +1,12 @@
+﻿@model IEnumerable<DataLayer.PageGroup>
+
+<div class="nav-item dropdown">
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">News Groups</a>
+    <div class="dropdown-menu">
+        @foreach (var item in Model)
+        {
+            <a href="#" class="dropdown-item">@item.GroupTitle</a>
+        }
+    </div>
+</div>
+
