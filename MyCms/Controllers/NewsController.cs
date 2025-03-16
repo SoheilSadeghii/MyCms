@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,18 @@ namespace MyCms.Controllers
 {
     public class NewsController : Controller
     {
+        MyCmsContext db = new MyCmsContext();
+        private IPageGroupRepository pageGroupRepository;
+
+        public NewsController()
+        {
+            pageGroupRepository = new PageGroupRepository(db);
+        }
+
         // GET: News
         public ActionResult ShowGroup()
         {
-            return PartialView();
+            return PartialView(pageGroupRepository.GetGroupsForView());
         }
     }
 }

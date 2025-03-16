@@ -1,12 +1,14 @@
-﻿<div class="col-lg-4">
+﻿@model IEnumerable<DataLayer.ShowGroupViewModel>
+
+<div class="col-lg-4">
     <div class="mn-list">
         <h2>Categories</h2>
         <ul>
-            <li><a href="">Political News <span>2</span></a></li>
-            <li><a href="">Sports News <span>2</span></a></li>
-            <li><a href="">Business News <span>2</span></a></li>
-            <li><a href="">Entertainment News <span>2</span></a></li>
-            
+            @foreach (var item in Model)
+            {
+                <li><a href=""> @item.GroupTitle <span>@item.PageCount</span></a></li>
+            }
+
         </ul>
     </div>
 </div>

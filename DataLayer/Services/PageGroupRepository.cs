@@ -22,7 +22,7 @@ namespace DataLayer
 
         public PageGroup GetGroupById(int groupId)
         {
-            return db.PageGroups.Find(groupId); 
+            return db.PageGroups.Find(groupId);
         }
 
         public bool InsertGroup(PageGroup pageGroup)
@@ -87,6 +87,16 @@ namespace DataLayer
         public void Dispose()
         {
             db.Dispose();
+        }
+
+        public IEnumerable<ShowGroupViewModel> GetGroupsForView()
+        {
+            return db.PageGroups.Select(g => new ShowGroupViewModel()
+            {
+                GroupID = g.GroupID,
+                GroupTitle = g.GroupTitle,
+                PageCount = g.Pages.Count
+            });
         }
     }
 }
