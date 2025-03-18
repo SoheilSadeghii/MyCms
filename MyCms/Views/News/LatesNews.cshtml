@@ -1,0 +1,18 @@
+﻿@model IEnumerable<DataLayer.Page>
+
+<div class="col-md-6 tn-right">
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+            <div class="col-md-6">
+                <div class="tn-img">
+                    <img src="/PageImages/@item.ImageName" />
+                    <div class="tn-title">
+                        <a href="">@item.Title</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
