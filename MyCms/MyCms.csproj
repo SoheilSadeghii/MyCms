@@ -239,6 +239,7 @@
     <Content Include="Views\News\LatesNews.cshtml" />
     <Content Include="Views\News\ArciveNews.cshtml" />
     <Content Include="Views\News\ShowNewsByGroupId.cshtml" />
+    <Content Include="Views\News\ShowNews.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

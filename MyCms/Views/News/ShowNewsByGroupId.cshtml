@@ -21,12 +21,12 @@
         {
             <li>
                 <img style="width:130px;height:100px" class="border-radius" src="/PageImages/@item.ImageName">
-                <h2> <a href=""> @item.Title </a></h2>
+                <h2> <a href="/News/@item.PageID"> @item.Title </a></h2>
                 <p>
                     @item.ShortDescription
                 </p>
                 <span class="date-publish"><i class="fa fa-calendar"></i> Published: @item.CreateDate </span>
-                <a href="" class="more-link"><i class="icons icon-more"></i></a>
+                <a href="/News/@item.PageID" class="more-link"><i class="icons icon-more"></i></a>
             </li>
 
         }

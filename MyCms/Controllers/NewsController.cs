@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace MyCms.Controllers
 {
@@ -47,10 +48,28 @@ namespace MyCms.Controllers
         }
 
         [Route("Group/{id}/{title}")]
-        public ActionResult ShowNewsByGroupId(int id, string title )
+        public ActionResult ShowNewsByGroupId(int id, string title)
         {
-            ViewBag.name=title;
+            ViewBag.name = title;
             return View(pageRepository.ShowPageByGroupId(id));
+        }
+
+        [Route("News/{id}")]
+        public ActionResult ShowNews(int id)
+        {
+            var news = pageRepository.GetPageById(id);
+
+            if (news == null)
+            {
+                return HttpNotFound();
+            }
+
+            news.Visit += 1;
+            pageRepository.UpdatePage(news);
+            pageRepository.Save();
+
+            return View(news);
+
         }
     }
 }
