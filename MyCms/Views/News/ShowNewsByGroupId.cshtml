@@ -1,0 +1,35 @@
+﻿@model IEnumerable<DataLayer.Page>
+@{
+    ViewBag.Title = "ShowNewsByGroupId";
+}
+
+<div class="breadcrumb-wrap">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">News</a></li>
+            <li class="breadcrumb-item active">@ViewBag.name</li>
+        </ul>
+    </div>
+</div>
+
+<section class="last-news-section border-radius">
+    <header><i class="icons icon-doc-2"></i>  <h3> New Archive @ViewBag.name</h3> </header>
+    <ul>
+
+        @foreach (var item in Model)
+        {
+            <li>
+                <img style="width:130px;height:100px" class="border-radius" src="/PageImages/@item.ImageName">
+                <h2> <a href=""> @item.Title </a></h2>
+                <p>
+                    @item.ShortDescription
+                </p>
+                <span class="date-publish"><i class="fa fa-calendar"></i> Published: @item.CreateDate </span>
+                <a href="" class="more-link"><i class="icons icon-more"></i></a>
+            </li>
+
+        }
+
+    </ul>
+</section>

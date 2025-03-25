@@ -45,5 +45,12 @@ namespace MyCms.Controllers
         {
             return View(pageRepository.GetAllPages());
         }
+
+        [Route("Group/{id}/{title}")]
+        public ActionResult ShowNewsByGroupId(int id, string title )
+        {
+            ViewBag.name=title;
+            return View(pageRepository.ShowPageByGroupId(id));
+        }
     }
 }

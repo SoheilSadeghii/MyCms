@@ -5,7 +5,7 @@
     <div class="dropdown-menu">
         @foreach (var item in Model)
         {
-            <a href="#" class="dropdown-item">@item.GroupTitle</a>
+            <a href="/Group/@item.GroupID/@item.GroupTitle" class="dropdown-item">@item.GroupTitle</a>
         }
     </div>
 </div>
