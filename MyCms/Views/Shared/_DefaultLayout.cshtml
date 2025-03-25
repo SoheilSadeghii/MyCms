@@ -108,8 +108,7 @@
     <div class="top-news">
         <div class="container">
             <div class="row">
-                @Html.Action("Slider", "Home")
-                @Html.Action("LatesNews","News")
+                @RenderBody()
             </div>
         </div>
     </div>
@@ -635,4 +634,3 @@
     <script src="/Content/js/main.js"></script>
 </body>
 </html>
-@RenderBody()
