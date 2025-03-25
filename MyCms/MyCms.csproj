@@ -237,6 +237,7 @@
     <Content Include="Views\Home\Slider.cshtml" />
     <Content Include="Views\Home\LatesNews.cshtml" />
     <Content Include="Views\News\LatesNews.cshtml" />
+    <Content Include="Views\News\ArciveNews.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
