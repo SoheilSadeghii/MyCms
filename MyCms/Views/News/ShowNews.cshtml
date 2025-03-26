@@ -4,79 +4,314 @@
     ViewBag.Title = "ShowNews";
 }
 
-<h2>ShowNews</h2>
 
-<div>
-    <h4>Page</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.PageGroup.GroupTitle)
-        </dt>
+<ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/Archive">News</a></li>
+    <li class="breadcrumb-item"><a href="/Archive">@Model.PageGroup.GroupTitle</a></li>
+    <li class="breadcrumb-item active">@Model.Title</li>
+</ul>
 
-        <dd>
-            @Html.DisplayFor(model => model.PageGroup.GroupTitle)
-        </dd>
+<div class="col-lg-8">
+    <div class="sn-container">
+        <div class="sn-img"> 
+            <img style="max-width:100%;width:730px;height:464px;" src="/PageImages/@Model.ImageName">
+        </div>
+        <div class="sn-content">
+            <h1 class="sn-title">@Model.Title</h1>
+            <p>
+                @Model.ShortDescription
+            </p>
+            <p>
+                @Model.Text
+            </p>
+        </div>
+    </div>
+    <div class="sn-related">
+        <h2>Related News</h2>
+        <div class="row sn-slider slick-initialized slick-slider">
+            <button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="">Previous</button>
+            <div class="slick-list draggable">
+                <div class="slick-track" style="opacity: 1; width: 2794px; transform: translate3d(-762px, 0px, 0px);">
+                    <div class="col-md-4 slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true" tabindex="-1" style="width: 254px;">
+                        <div class="sn-img">
+                            <img src="img/news-350x223-2.jpg">
+                            <div class="sn-title">
+                                <a href="" tabindex="-1">Interdum et fames ac ante</a>
+                            </div>
+                        </div>
+                    </div><div class="col-md-4 slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" tabindex="-1" style="width: 254px;">
+                        <div class="sn-img">
+                            <img src="img/news-350x223-3.jpg">
+                            <div class="sn-title">
+                                <a href="" tabindex="-1">Interdum et fames ac ante</a>
+                            </div>
+                        </div>
+                    </div><div class="col-md-4 slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 254px;">
+                        <div class="sn-img">
+                            <img src="img/news-350x223-4.jpg">
+                            <div class="sn-title">
+                                <a href="" tabindex="-1">Interdum et fames ac ante</a>
+                            </div>
+                        </div>
+                    </div><div class="col-md-4 slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="0" style="width: 254px;">
+                        <div class="sn-img">
+                            <img src="img/news-350x223-1.jpg">
+                            <div class="sn-title">
+                                <a href="" tabindex="0">Interdum et fames ac ante</a>
+                            </div>
+                        </div>
+                    </div><div class="col-md-4 slick-slide slick-active" data-slick-index="1" aria-hidden="false" tabindex="0" style="width: 254px;">
+                        <div class="sn-img">
+                            <img src="img/news-350x223-2.jpg">
+                            <div class="sn-title">
+                                <a href="" tabindex="0">Interdum et fames ac ante</a>
+                            </div>
+                        </div>
+                    </div><div class="col-md-4 slick-slide slick-active" data-slick-index="2" aria-hidden="false" tabindex="0" style="width: 254px;">
+                        <div class="sn-img">
+                            <img src="img/news-350x223-3.jpg">
+                            <div class="sn-title">
+                                <a href="" tabindex="0">Interdum et fames ac ante</a>
+                            </div>
+                        </div>
+                    </div><div class="col-md-4 slick-slide" data-slick-index="3" aria-hidden="true" tabindex="-1" style="width: 254px;">
+                        <div class="sn-img">
+                            <img src="img/news-350x223-4.jpg">
+                            <div class="sn-title">
+                                <a href="" tabindex="-1">Interdum et fames ac ante</a>
+                            </div>
+                        </div>
+                    </div><div class="col-md-4 slick-slide slick-cloned" data-slick-index="4" aria-hidden="true" tabindex="-1" style="width: 254px;">
+                        <div class="sn-img">
+                            <img src="img/news-350x223-1.jpg">
+                            <div class="sn-title">
+                                <a href="" tabindex="-1">Interdum et fames ac ante</a>
+                            </div>
+                        </div>
+                    </div><div class="col-md-4 slick-slide slick-cloned" data-slick-index="5" aria-hidden="true" tabindex="-1" style="width: 254px;">
+                        <div class="sn-img">
+                            <img src="img/news-350x223-2.jpg">
+                            <div class="sn-title">
+                                <a href="" tabindex="-1">Interdum et fames ac ante</a>
+                            </div>
+                        </div>
+                    </div><div class="col-md-4 slick-slide slick-cloned" data-slick-index="6" aria-hidden="true" tabindex="-1" style="width: 254px;">
+                        <div class="sn-img">
+                            <img src="img/news-350x223-3.jpg">
+                            <div class="sn-title">
+                                <a href="" tabindex="-1">Interdum et fames ac ante</a>
+                            </div>
+                        </div>
+                    </div><div class="col-md-4 slick-slide slick-cloned" data-slick-index="7" aria-hidden="true" tabindex="-1" style="width: 254px;">
+                        <div class="sn-img">
+                            <img src="img/news-350x223-4.jpg">
+                            <div class="sn-title">
+                                <a href="" tabindex="-1">Interdum et fames ac ante</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ShortDescription)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ShortDescription)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Text)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Text)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Visit)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Visit)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImageName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImageName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ShowInSlider)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ShowInSlider)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CreateDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CreateDate)
-        </dd>
-
-    </dl>
+            <button class="slick-next slick-arrow" aria-label="Next" type="button" style="">Next</button>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PageID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+<div class="col-lg-4">
+    <div class="sidebar">
+        <div class="sidebar-widget">
+            <h2 class="sw-title">In This Category</h2>
+            <div class="news-list">
+                <div class="nl-item">
+                    <div class="nl-img">
+                        <img src="img/news-350x223-1.jpg">
+                    </div>
+                    <div class="nl-title">
+                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                    </div>
+                </div>
+                <div class="nl-item">
+                    <div class="nl-img">
+                        <img src="img/news-350x223-2.jpg">
+                    </div>
+                    <div class="nl-title">
+                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                    </div>
+                </div>
+                <div class="nl-item">
+                    <div class="nl-img">
+                        <img src="img/news-350x223-3.jpg">
+                    </div>
+                    <div class="nl-title">
+                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                    </div>
+                </div>
+                <div class="nl-item">
+                    <div class="nl-img">
+                        <img src="img/news-350x223-4.jpg">
+                    </div>
+                    <div class="nl-title">
+                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                    </div>
+                </div>
+                <div class="nl-item">
+                    <div class="nl-img">
+                        <img src="img/news-350x223-5.jpg">
+                    </div>
+                    <div class="nl-title">
+                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-widget">
+            <div class="image">
+                <a href="https://htmlcodex.com"><img src="img/ads-2.jpg" alt="Image"></a>
+            </div>
+        </div>
+
+        <div class="sidebar-widget">
+            <div class="tab-news">
+                <ul class="nav nav-pills nav-justified">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="pill" href="#featured">Featured</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#popular">Popular</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#latest">Latest</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <div id="featured" class="container tab-pane active">
+                        @Html.Action("TopNews", "News")
+                    </div>
+                    <div id="popular" class="container tab-pane fade">
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="img/news-350x223-4.jpg">
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                            </div>
+                        </div>
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="img/news-350x223-3.jpg">
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                            </div>
+                        </div>
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="img/news-350x223-2.jpg">
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                            </div>
+                        </div>
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="img/news-350x223-1.jpg">
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                            </div>
+                        </div>
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="img/news-350x223-2.jpg">
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="latest" class="container tab-pane fade">
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="img/news-350x223-3.jpg">
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                            </div>
+                        </div>
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="img/news-350x223-4.jpg">
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                            </div>
+                        </div>
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="img/news-350x223-5.jpg">
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                            </div>
+                        </div>
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="img/news-350x223-4.jpg">
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                            </div>
+                        </div>
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="img/news-350x223-3.jpg">
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-widget">
+            <div class="image">
+                <a href="https://htmlcodex.com"><img src="img/ads-2.jpg" alt="Image"></a>
+            </div>
+        </div>
+
+        <div class="sidebar-widget">
+            <div class="category">
+                <ul>
+                    @Html.Action("ShowGroup", "News")
+                </ul>
+            </div>
+        </div>
+
+        <div class="sidebar-widget">
+            <div class="image">
+                <a href="https://htmlcodex.com"><img src="img/ads-2.jpg" alt="Image"></a>
+            </div>
+        </div>
+
+        <div class="sidebar-widget">
+            <h2 class="sw-title">Tags Cloud</h2>
+            <div class="tags">
+                <a href="">National</a>
+                <a href="">International</a>
+                <a href="">Economics</a>
+                <a href="">Politics</a>
+                <a href="">Lifestyle</a>
+                <a href="">Technology</a>
+                <a href="">Trades</a>
+            </div>
+        </div>
+    </div>
+</div>

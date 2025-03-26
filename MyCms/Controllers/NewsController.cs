@@ -68,7 +68,7 @@ namespace MyCms.Controllers
             pageRepository.UpdatePage(news);
             pageRepository.Save();
 
-            return View(news);
+            return Vi   ew(news);
 
         }
     }
