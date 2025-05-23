@@ -1,0 +1,22 @@
+﻿@model IEnumerable<DataLayer.Page>
+
+@{
+    ViewBag.Title = "ArchiveNews";
+}
+<header><i class="icons icon-doc-2"></i> <h3>"@Model.Count()" items found with the term "@ViewBag.Name".</h3></header>
+
+<div class="col-md-6 tn-right">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-6">
+                <div class="tn-img">
+                    <img src="/PageImages/@item.ImageName" />
+                    <div class="tn-title">
+                        <a href="/News/@item.PageID">@item.Title</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -241,13 +241,13 @@
     <Content Include="Views\News\ArciveNews.cshtml" />
     <Content Include="Views\News\ShowNewsByGroupId.cshtml" />
     <Content Include="Views\News\ShowNews.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Models\" />
     <Folder Include="PageImages\" />
-    <Folder Include="Views\Search\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
