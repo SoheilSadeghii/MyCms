@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,19 @@ namespace MyCms.Controllers
 {
     public class SearchController : Controller
     {
-        // GET: Search
-        public ActionResult Index()
+        private IPageRepository pageRepository;
+        MyCmsContext db = new MyCmsContext();
+
+        public SearchController()
         {
-            return View();
+            pageRepository = new PageRepository(db);
+        }
+        // GET: Search
+        public ActionResult Index(string id)
+        {
+            ViewBag.Name = id;
+
+            return View(pageRepository.SearchPage(id));
         }
     }
 }
