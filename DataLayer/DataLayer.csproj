@@ -51,7 +51,12 @@
     <Compile Include="Migrations\202505230724566_Add_Tags_Pages.designer.cs">
       <DependentUpon>202505230724566_Add_Tags_Pages.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202505231611344_AdminLogins.cs" />
+    <Compile Include="Migrations\202505231611344_AdminLogins.Designer.cs">
+      <DependentUpon>202505231611344_AdminLogins.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AdminLogins.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\PageComment.cs" />
     <Compile Include="Models\PageGroup.cs" />
@@ -74,6 +79,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202505230724566_Add_Tags_Pages.resx">
       <DependentUpon>202505230724566_Add_Tags_Pages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505231611344_AdminLogins.resx">
+      <DependentUpon>202505231611344_AdminLogins.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
