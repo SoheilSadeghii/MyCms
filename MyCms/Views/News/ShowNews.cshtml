@@ -14,7 +14,7 @@
 
 <div class="col-lg-8">
     <div class="sn-container">
-        <div class="sn-img"> 
+        <div class="sn-img">
             <img style="max-width:100%;width:730px;height:464px;" src="/PageImages/@Model.ImageName">
         </div>
         <div class="sn-content">
@@ -304,13 +304,10 @@
         <div class="sidebar-widget">
             <h2 class="sw-title">Tags Cloud</h2>
             <div class="tags">
-                <a href="">National</a>
-                <a href="">International</a>
-                <a href="">Economics</a>
-                <a href="">Politics</a>
-                <a href="">Lifestyle</a>
-                <a href="">Technology</a>
-                <a href="">Trades</a>
+                @foreach (var item in Model.Tags.Split(','))
+                {
+                    <a href="">@item</a>
+                }
             </div>
         </div>
     </div>
