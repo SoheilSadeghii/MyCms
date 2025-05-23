@@ -46,6 +46,9 @@ namespace DataLayer
         [DisplayFormat(DataFormatString ="{0: yyyy/MM/dd}")]
         public DateTime CreateDate { get; set; }
 
+        [Display(Name = "Tags Cloud")]
+        public string Tags { get; set; }
+
         // Navigation Property
         public virtual PageGroup PageGroup { get; set; }
 
