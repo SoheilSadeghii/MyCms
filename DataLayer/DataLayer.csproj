@@ -61,9 +61,11 @@
     <Compile Include="Models\PageComment.cs" />
     <Compile Include="Models\PageGroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ILoginRepository.cs" />
     <Compile Include="Repositories\IPageCommentRepository.cs" />
     <Compile Include="Repositories\IPageGroupRepository.cs" />
     <Compile Include="Repositories\IPageRepository.cs" />
+    <Compile Include="Services\LoginRepository.cs" />
     <Compile Include="Services\PageGroupRepository.cs" />
     <Compile Include="Services\PageRepository.cs" />
     <Compile Include="ViewModels\ShowGroupViewModel.cs" />
