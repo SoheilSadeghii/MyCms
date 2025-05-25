@@ -11,6 +11,7 @@ using DataLayer;
 
 namespace MyCms.Areas.Admin.Controllers
 {
+    [Authorize]
     public class PagesController : Controller
     {
         private IPageRepository _pageRepository;
