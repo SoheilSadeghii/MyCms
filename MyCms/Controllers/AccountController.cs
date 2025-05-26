@@ -31,15 +31,22 @@ namespace MyCms.Controllers
             {
                 if (_loginRepository.IsExitUser(login.UserName, login.Password))
                 {
-                    FormsAuthentication.SetAuthCookie(login.UserName,login.RememberMe);
+                    FormsAuthentication.SetAuthCookie(login.UserName, login.RememberMe);
                     return Redirect("/");
                 }
                 else
                 {
-                    ModelState.AddModelError("UserName","User not found!");
+                    ModelState.AddModelError("UserName", "User not found!");
                 }
             }
             return View(login);
+        }
+
+        public ActionResult SignOut()
+        {
+            FormsAuthentication.SignOut();
+
+            return Redirect("/");
         }
     }
 }
