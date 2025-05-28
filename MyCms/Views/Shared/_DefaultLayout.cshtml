@@ -92,7 +92,19 @@
                             @Html.Action("ShowGroupInMenu", "News")
                         </div>
                         <a href="/Archive" class="nav-item nav-link">News  Archive</a>
-                        <a href="single-page.html" class="nav-item nav-link">Single Page</a>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Welcome @User.Identity.Name</a>
+                                <div class="dropdown-menu">
+                                    <a href="/Account/SignOut" class="dropdown-item">Sign Out</a>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <a href="/Account/Login" class="nav-item nav-link">Log In</a>
+                        }
                         <a href="contact.html" class="nav-item nav-link">Contact Us</a>
                     </div>
                     <div class="social ml-auto">
