@@ -25,14 +25,14 @@ namespace MyCms.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(LoginViewModel login)
+        public ActionResult Login(LoginViewModel login, string ReturnUrl = "/")
         {
             if (ModelState.IsValid)
             {
                 if (_loginRepository.IsExitUser(login.UserName, login.Password))
                 {
                     FormsAuthentication.SetAuthCookie(login.UserName, login.RememberMe);
-                    return Redirect("/");
+                    return Redirect(ReturnUrl);
                 }
                 else
                 {
