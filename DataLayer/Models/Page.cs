@@ -5,6 +5,7 @@ using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace DataLayer
 {
@@ -31,6 +32,7 @@ namespace DataLayer
         [Display(Name = "Text")]
         [Required(ErrorMessage = "Please enter {0}")]
         [DataType(DataType.MultilineText)]
+        [AllowHtml]
         public string Text { get; set; }
 
         [Display(Name = "Views")]
