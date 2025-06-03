@@ -1376,6 +1376,7 @@
     <Content Include="Views\News\ShowNews.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Home\CatSlider.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

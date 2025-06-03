@@ -39,5 +39,10 @@ namespace MyCms.Controllers
         {
             return PartialView(_pageRepository.PagesInSlider());
         }
+
+        public ActionResult CatSlider()
+        {
+            return PartialView(_pageRepository.PagesInSlider());
+        }
     }
 }
