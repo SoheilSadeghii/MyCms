@@ -39,10 +39,12 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Text, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Text, htmlAttributes: new { @class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Text, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Text, new { htmlAttributes = new { @class = "editor form-control", id = "message" } })
+                @Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger"})
+
+                @*@Html.TextAreaFor(s => s.Text, new { Class = "editor form-control", id = "message", required = true, rows = "10" })*@
             </div>
         </div>
 
@@ -84,13 +86,79 @@
     @Html.ActionLink("Back to List", "Index")
 </div>
 
+<script src="~/Scripts/ckeditor.js"></script>
+
 @section scripts
 {
-    <script src="/ckeditor/ckeditor.js"></script>
-    <script src="/ckeditor/adapters/jquery.js"></script>
     <script>
-        $(function () {
-            $('#Text').ckeditor();
-        });
+        ClassicEditor.create(document.querySelector('.editor'), {
+
+            toolbar: {
+                items: [
+                    'heading',
+                    '|',
+                    'fontFamily',
+                    'fontSize',
+                    'fontColor',
+                    'fontBackgroundColor',
+                    '|',
+                    'bold',
+                    'italic',
+                    'underline',
+                    'strikethrough',
+                    '|',
+                    'alignment',
+                    'bulletedList',
+                    'numberedList',
+                    'outdent',
+                    'indent',
+                    'blockQuote',
+                    '|',
+                    'link',
+                    'insertTable',
+                    '|',
+                    'undo',
+                    'redo'
+                ]
+            },
+
+            image: {
+                toolbar: [
+                    'imageTextAlternative',
+                    'imageStyle:inline',
+                    'imageStyle:block',
+                    'imageStyle:side'
+                ]
+            },
+            table: {
+                contentToolbar: [
+                    'tableColumn',
+                    'tableRow',
+                    'mergeTableCells'
+                ]
+            },
+            licenseKey: '',
+
+
+
+        })
+            .then(editor => {
+                window.editor = editor;
+
+
+
+
+            })
+            .catch(error => {
+                console.error('Oops, something went wrong!');
+                console.error('Please, report the following error with the build id and the error stack trace:');
+                console.warn('Build id: siyyi6z4ewkl-5975on8y2xh6');
+                console.error(error);
+            });
+
+        function sendform() {
+            document.getElementById("formbutton").style.display = "none";
+            $("#form").submit();
+        }
     </script>
 }
