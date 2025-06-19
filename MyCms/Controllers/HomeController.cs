@@ -44,5 +44,10 @@ namespace MyCms.Controllers
         {
             return PartialView(_pageRepository.PagesInSlider());
         }
+
+        public ActionResult LatesNews()
+        {
+            return PartialView(_pageRepository.LatesNews());
+        }
     }
 }

@@ -238,7 +238,6 @@
     <Content Include="Views\News\ShowGroupInMenu.cshtml" />
     <Content Include="Views\News\TopNews.cshtml" />
     <Content Include="Views\Home\Slider.cshtml" />
-    <Content Include="Views\Home\LatesNews.cshtml" />
     <Content Include="Views\News\LatesNews.cshtml" />
     <Content Include="Views\News\ArciveNews.cshtml" />
     <Content Include="Views\News\ShowNewsByGroupId.cshtml" />
@@ -246,6 +245,7 @@
     <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Home\CatSlider.cshtml" />
+    <Content Include="Views\Home\LatesNews.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

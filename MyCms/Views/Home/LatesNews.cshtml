@@ -1,0 +1,15 @@
+﻿@model IEnumerable<DataLayer.Page>
+
+<div id="m-read" class="container tab-pane fade">
+    @foreach (var item in Model)
+    {
+        <div class="tn-news">
+            <div class="tn-img">
+                <img src="~/PageImages/@item.ImageName" />
+            </div>
+            <div class="tn-title">
+                <a href="/News/@item.PageID">@item.Title</a>
+            </div>
+        </div>
+    }
+</div>
