@@ -43,8 +43,6 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Text, new { htmlAttributes = new { @class = "editor form-control", id = "message" } })
                 @Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger"})
-
-                @*@Html.TextAreaFor(s => s.Text, new { Class = "editor form-control", id = "message", required = true, rows = "10" })*@
             </div>
         </div>
 
