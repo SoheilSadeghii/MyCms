@@ -246,6 +246,7 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Home\CatSlider.cshtml" />
     <Content Include="Views\Home\LatesNews.cshtml" />
+    <Content Include="Views\Home\MainNews.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

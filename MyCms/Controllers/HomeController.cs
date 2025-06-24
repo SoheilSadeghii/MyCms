@@ -49,5 +49,9 @@ namespace MyCms.Controllers
         {
             return PartialView(_pageRepository.LatesNews());
         }
+        public ActionResult MainNews()
+        {
+            return PartialView(_pageRepository.MainNews());
+        }
     }
 }

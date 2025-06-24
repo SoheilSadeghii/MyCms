@@ -121,5 +121,10 @@ namespace DataLayer
         {
             return db.Pages.OrderByDescending(p => p.CreateDate).Take(take);
         }
+
+        public IEnumerable<Page> MainNews(int take = 9)
+        {
+            return db.Pages.OrderByDescending(p =>p.CreateDate).Take(take);
+        }
     }
 }

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<DataLayer.Page>
+
+<div class="main-news">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-md-4">
+                            <div class="mn-img">
+                                <img src="~/PageImages/@item.ImageName" />
+                                <div class="mn-title">
+                                    <a href="/News/@item.PageID">@item.Title</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="mn-list">
+                    <h2>Read More</h2>
+                    <ul>
+                        @foreach (var item in Model)
+                        {
+                            <li><a href="/News/@item.PageID">@item.Title</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
