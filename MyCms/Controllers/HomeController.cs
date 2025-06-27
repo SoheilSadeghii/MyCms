@@ -53,5 +53,10 @@ namespace MyCms.Controllers
         {
             return PartialView(_pageRepository.MainNews());
         }
+
+        public ActionResult TopNews()
+        {
+            return PartialView();
+        }
     }
 }

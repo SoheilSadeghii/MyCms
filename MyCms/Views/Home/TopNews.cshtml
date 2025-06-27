@@ -1,0 +1,71 @@
+﻿            </div>
+        </div>
+    </div>
+<!-- Top News End-->
+<!-- Tab News Start-->
+<div class="tab-news">
+    <div class="container">
+        <div class="row">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="col-md-8">
+                <ul class="nav nav-pills nav-justified">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="pill" href="#m-viewed">Most Viewed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#m-read">Latest News</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    @Html.Action("TopNews", "News")
+                    @Html.Action("LatesNews", "Home")
+                    <div id="m-recent" class="container tab-pane fade">
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="/Content/img/news-350x223-4.jpg" />
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Lorem ipsum dolor sit amet</a>
+                            </div>
+                        </div>
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                <img src="/Content/img/news-350x223-5.jpg" />
+                            </div>
+                            <div class="tn-title">
+                                <a href="">Lorem ipsum dolor sit amet</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                @Html.Action("ShowGroup", "News")
+            </div>
+            <br />
+            <br />
+        </div>
+    </div>
+</div>
+<!-- Tab News Start-->
+<!-- Main News Start-->
+@Html.Action("MainNews", "Home")
+<!-- Main News End-->

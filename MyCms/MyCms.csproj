@@ -247,6 +247,7 @@
     <Content Include="Views\Home\CatSlider.cshtml" />
     <Content Include="Views\Home\LatesNews.cshtml" />
     <Content Include="Views\Home\MainNews.cshtml" />
+    <Content Include="Views\Home\TopNews.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
