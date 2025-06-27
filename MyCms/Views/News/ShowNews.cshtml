@@ -4,6 +4,11 @@
     ViewBag.Title = "ShowNews";
 }
 
+<style>
+    .single-news img{
+        max-width: 100% !important;
+    }
+</style>
 
 <ul class="breadcrumb">
     <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -17,7 +22,7 @@
         <div class="sn-img">
             <img style="max-width:100%;width:730px;height:464px;" src="/PageImages/@Model.ImageName">
         </div>
-        <div class="sn-content">
+        <div class="single-news sn-content">
             <h1 class="sn-title">@Model.Title</h1>
             <p>
                 @Model.ShortDescription
